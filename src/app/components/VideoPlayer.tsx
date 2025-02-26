@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 
 interface Caption {
@@ -43,6 +43,7 @@ export default function VideoPlayer({ url, captions }: VideoPlayerProps) {
       setCaptionFile(url);
       
     } catch (error) {
+        console.log(error)
       toast.error("Failed to generate captions.");
     }
 
